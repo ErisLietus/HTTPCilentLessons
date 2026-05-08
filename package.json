@@ -1,0 +1,32 @@
+{
+  "name": "httpcilentlessons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type:": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsc && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErisLietus/HTTPCilentLessons.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErisLietus/HTTPCilentLessons/issues"
+  },
+  "homepage": "https://github.com/ErisLietus/HTTPCilentLessons#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
