@@ -1,17 +1,16 @@
 import { Request, Response } from "express";
 import { respondWithError, respondWithJSON } from "./json";
+import { BadRequestError } from "./error";
 
 type chirp = {
     body: string,
 }
 
 export async function handlerChirp(req: Request, res: Response) {
-    // The middleware already parsed the body into req.body
     const parsed: chirp = req.body;
 
-    // We can now access parsed.body immediately
     if (parsed.body.length > 140) {
-        return respondWithError(res, 400, "Chirp is too long");
+        throw new BadRequestError("Chirp is too long. Max length is 140")
     }
     const lst = parsed.body.split(" ")
     const cleanList = []
