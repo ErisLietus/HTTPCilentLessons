@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { config } from "../config";
+import { config } from "../config.js";
 
 
 export function middlewareLogResponses(req:Request, res: Response, next: NextFunction) {
@@ -13,6 +13,6 @@ export function middlewareLogResponses(req:Request, res: Response, next: NextFun
 }
 
 export function middlewareMetricsInc(req: Request, res: Response, next: NextFunction) {
-  config.fileserverHits++;
+  config.api.fileserverHits++;
   next();
 }

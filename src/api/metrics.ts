@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { config } from "../config";
+import { config } from "../config.js";
 
 export async function handlerMetrics(req: Request,  res:Response): Promise<void>{
     res.set("Content-Type", "text/html; charset=utf-8")
     res.send(`<html>\n
         <body>\n
             <h1>Welcome, Chirpy Admin</h1>\n
-            <p>Chirpy has been visited ${config.fileserverHits} times!</p>\n
+            <p>Chirpy has been visited ${config.api.fileserverHits} times!</p>\n
         </body>\n
     </html>`)
 }

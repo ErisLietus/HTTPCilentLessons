@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { respondWithError, respondWithJSON } from "./json";
-import { BadRequestError } from "./error";
+import { respondWithError, respondWithJSON } from "./json.js";
+import { BadRequestError } from "./error.js";
 
 type chirp = {
     body: string,

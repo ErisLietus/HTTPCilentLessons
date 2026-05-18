@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { respondWithError } from "./json";
+import { respondWithError } from "./json.js";
 
 
 class HTTPError extends Error {
