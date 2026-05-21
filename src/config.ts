@@ -9,16 +9,21 @@ process.loadEnvFile()
 export type APIConfig = {
   fileserverHits: number,
   platform: string
+  p_key: string
 };
 
 export type DBconfig = {
   url: string,
   migrationConfig: MigrationConfig
 }
+export type JWTConfig = {
+  key: string
+}
 
 const apiConfig: APIConfig = {
     fileserverHits: 0,
-    platform: process.env.PLATFORM || ""
+    platform: envOrThrow("PLATFORM"),
+    p_key: envOrThrow("POLKA_KEY")
 }
 
 const dbConfig: DBconfig = {
@@ -26,9 +31,14 @@ const dbConfig: DBconfig = {
   migrationConfig: migrationConfig
 }
 
+const jwtConfig: JWTConfig ={
+  key: envOrThrow("JWT_SECRET")
+}
+
 export const config = {
   api: apiConfig,
-  db: dbConfig
+  db: dbConfig,
+  jwt: jwtConfig
 }
 
 function envOrThrow(key: string) {

@@ -8,6 +8,34 @@
       "when": 1778766283022,
       "tag": "0000_lying_doctor_faustus",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1779111036954,
+      "tag": "0001_mysterious_leader",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1779188437343,
+      "tag": "0002_hot_firelord",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1779276312947,
+      "tag": "0003_fast_hardball",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1779358372687,
+      "tag": "0004_third_santa_claus",
+      "breakpoints": true
     }
   ]
 }

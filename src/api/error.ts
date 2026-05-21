@@ -34,6 +34,7 @@ export function errorHandler(err: Error, req: Request, res: Response, next: Next
     if(err instanceof HTTPError){
         respondWithError(res, err.statusCode, err.message)
     }else{
+      console.log(err)
     respondWithError(res, 500, "Something has gone wrong on our end")
 }
 }
