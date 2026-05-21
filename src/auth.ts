@@ -67,5 +67,5 @@ export function getAPIKey(req: Request): string{
     if(typeof auth !== "string"){
         throw new UnauthorizedError("An Error occurred")
     }
-    return auth.replace("API ", "").trim()
+    return auth.replace("ApiKey ", "").trim()
 }

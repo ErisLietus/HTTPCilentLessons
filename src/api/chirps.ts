@@ -43,9 +43,21 @@ export async function handlerChirp(req: Request, res: Response) {
 }
 
 export async function allChirps(req: Request, res : Response) {
-    const chirps = await getChirps()
-     respondWithJSON(res, 200, chirps)
-}   
+    let authorId = ""
+    let authorIdQuery = req.query.authorId
+    let order = req.query.sort
+    if(typeof authorIdQuery === "string"){
+        authorId = authorIdQuery
+    }
+    if(typeof order === "string"){
+       const chirps = await  getChirps(authorId, order)
+       respondWithJSON(res, 200, chirps)
+    }else{
+    const chirps = await getChirps(authorId)
+    respondWithJSON(res, 200, chirps)
+    }
+}
+   
 
 export async function singleChirp(req: Request, res: Response) {
     const id = req.params.chirpId as string
